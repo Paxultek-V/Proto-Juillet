@@ -7,6 +7,18 @@ public class Item : GameflowBehavior
 
     private ItemRank_Controller m_itemRankController;
 
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+        UI_ButtonDebug_NextLevel.OnDebugNextLevelButtonPressed += OnDebugNextLevelButtonPressed;
+    }
+
+    protected override void OnDisable()
+    {
+        base.OnDisable();
+        UI_ButtonDebug_NextLevel.OnDebugNextLevelButtonPressed -= OnDebugNextLevelButtonPressed;
+    }
+
     public void Initialize(int initialRank = 0)
     {
         m_itemRankController = GetComponent<ItemRank_Controller>();
@@ -20,6 +32,12 @@ public class Item : GameflowBehavior
         m_itemRankController.Initialize(initialRank);
     }
 
+
+    private void OnDebugNextLevelButtonPressed()
+    {
+        OnItemKill?.Invoke();
+        Destroy(gameObject);
+    }
 
     protected override void OnVictory()
     {

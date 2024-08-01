@@ -1,4 +1,3 @@
-using System;
 using DG.Tweening;
 using UnityEngine;
 
@@ -7,8 +6,6 @@ public class ItemVisual_Controller : MonoBehaviour
     [SerializeField] private Transform m_visualTransform = null;
     [SerializeField] private Transform m_visualTextTransform = null;
     
-    [SerializeField] private MeshRenderer m_meshRenderer = null;
-
     [SerializeField] private ItemData_SO m_itemRankData = null;
     
     private ItemRank_Controller m_itemRankController;
@@ -39,7 +36,12 @@ public class ItemVisual_Controller : MonoBehaviour
 
     public void UpdateVisual(int currentRank)
     {
-        m_meshRenderer.material = m_itemRankData.GetItemRankData(currentRank).Material;
+        foreach (Transform child in m_visualTransform)
+        {
+            Destroy(child.gameObject);
+        }
+
+        Instantiate(m_itemRankData.GetItemRankData(currentRank).Model, m_visualTransform);
     }
     
     

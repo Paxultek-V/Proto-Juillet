@@ -7,7 +7,7 @@ using UnityEngine;
 [Serializable]
 public class ItemRankData
 {
-    public Material Material;
+    public GameObject Model;
     public float Scale;
 }
 
