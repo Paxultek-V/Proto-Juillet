@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Coin
-    second: {fileID: 2100000, guid: 0e62243ab3fa2f04ca5a4c77d369cf34, type: 2}
+    second: {fileID: 2100000, guid: 810a15cc2dcea5f40ab7fa66eb5d4d4a, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
