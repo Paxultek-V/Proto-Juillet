@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: cc7c74a322dd5a34da3449c145aac135, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.37
+      value: 4.76
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cc7c74a322dd5a34da3449c145aac135, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.37
+      value: 4.76
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cc7c74a322dd5a34da3449c145aac135, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2.37
+      value: 20.08439
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cc7c74a322dd5a34da3449c145aac135, type: 3}
       propertyPath: m_LocalPosition.x
@@ -60,6 +60,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cc7c74a322dd5a34da3449c145aac135, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: cc7c74a322dd5a34da3449c145aac135, type: 3}
       propertyPath: m_Name
       value: 16_8192Dollars
@@ -98,4 +102,4 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: 8674446057186187824, guid: cc7c74a322dd5a34da3449c145aac135, type: 3}
+  m_Mesh: {fileID: 7829551054790322736, guid: cc7c74a322dd5a34da3449c145aac135, type: 3}

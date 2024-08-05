@@ -49,9 +49,10 @@ MonoBehaviour:
   m_itemPrefab: {fileID: 7006628663039811535, guid: 2e1e03aefaee74270b5e33c1e2415d22, type: 3}
   m_spawnPosition: {fileID: 4828883095978503182}
   m_itemParent: {fileID: 0}
-  m_spawnCooldown: 1
+  m_spawnCooldown: 0.8
   m_minItemRank: 0
   m_maxItemRank: 2
+  m_rankOffset: 6
 --- !u!1 &8590007931807277265
 GameObject:
   m_ObjectHideFlags: 0

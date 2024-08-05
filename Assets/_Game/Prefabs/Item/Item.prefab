@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3647452105742198351}
   - component: {fileID: 1248452318576844904}
   - component: {fileID: 7893869926585595262}
+  - component: {fileID: -8409268239064814724}
   m_Layer: 0
   m_Name: Item
   m_TagString: Untagged
@@ -147,6 +148,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_deathFxPrefab: {fileID: 19877600, guid: 1673ce95e106949b2a4643af81dcd08c, type: 3}
+--- !u!114 &-8409268239064814724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740544924763924725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37284bfa313084eaebbc026737feec71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1092836366116461254
 GameObject:
   m_ObjectHideFlags: 0

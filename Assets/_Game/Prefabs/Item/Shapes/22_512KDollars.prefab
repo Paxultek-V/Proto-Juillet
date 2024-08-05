@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 55991fd15b9672f4b8ce5af861c69c5c, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3.086
+      value: 12.15
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 55991fd15b9672f4b8ce5af861c69c5c, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3.086
+      value: 12.15
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 55991fd15b9672f4b8ce5af861c69c5c, type: 3}
       propertyPath: m_LocalScale.z
-      value: 3.086
+      value: 78.7427
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 55991fd15b9672f4b8ce5af861c69c5c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -60,6 +60,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 55991fd15b9672f4b8ce5af861c69c5c, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 55991fd15b9672f4b8ce5af861c69c5c, type: 3}
       propertyPath: m_Name
       value: 22_512KDollars
@@ -98,4 +102,4 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: -6749628112362209450, guid: 55991fd15b9672f4b8ce5af861c69c5c, type: 3}
+  m_Mesh: {fileID: -8713141744690241504, guid: 55991fd15b9672f4b8ce5af861c69c5c, type: 3}

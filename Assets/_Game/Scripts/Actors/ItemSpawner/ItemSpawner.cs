@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -15,6 +16,8 @@ public class ItemSpawner : GameflowBehavior
 
     [SerializeField] private int m_maxItemRank = 2;
 
+    [SerializeField] private int m_rankOffset = 3;
+
     private Item m_itemBuffer;
     private Rigidbody m_bodyBuffer;
     private float m_cooldownTimer;
@@ -22,18 +25,29 @@ public class ItemSpawner : GameflowBehavior
     private bool m_hasReleased;
     private bool m_isSpawningEnabled;
 
+    private int m_currentMinItemRank;
+    private int m_currentMaxItemRank;
+    private int m_currentMaxRankReached;
+
     protected override void OnEnable()
     {
         base.OnEnable();
         Controller.OnRelease += OnRelease;
+        ItemRank_Controller.OnBroadcastRank += OnBroadcastRank;
     }
 
     protected override void OnDisable()
     {
         base.OnDisable();
         Controller.OnRelease -= OnRelease;
+        ItemRank_Controller.OnBroadcastRank -= OnBroadcastRank;
     }
 
+    private void Start()
+    {
+        m_currentMinItemRank = m_minItemRank;
+        m_currentMaxItemRank = m_maxItemRank;
+    }
 
     private void Update()
     {
@@ -96,6 +110,28 @@ public class ItemSpawner : GameflowBehavior
         ReleaseItem();
     }
 
+    private void OnBroadcastRank(int rank)
+    {
+        UpdateRankSpawnRange(rank);
+    }
+
+
+    private void UpdateRankSpawnRange(int reachedRank)
+    {
+        if (reachedRank > m_rankOffset)
+        {
+            if (m_currentMaxRankReached < reachedRank)
+                m_currentMaxRankReached = reachedRank;
+            else
+                return;
+
+            int diff = m_currentMaxRankReached - m_rankOffset;
+
+            m_currentMaxItemRank = m_maxItemRank + diff;
+            m_currentMinItemRank = m_minItemRank + diff;
+        }
+    }
+
     private void SpawnItem()
     {
         m_canSpawn = false;
@@ -104,7 +140,7 @@ public class ItemSpawner : GameflowBehavior
 
         m_itemBuffer = Instantiate(m_itemPrefab, m_spawnPosition.position, Quaternion.identity, m_spawnPosition);
 
-        m_itemBuffer.Initialize(Random.Range(m_minItemRank, m_maxItemRank));
+        m_itemBuffer.Initialize(Random.Range(m_currentMinItemRank, m_currentMaxItemRank + 1));
 
         m_bodyBuffer = m_itemBuffer.transform.GetComponent<Rigidbody>();
 
@@ -114,10 +150,10 @@ public class ItemSpawner : GameflowBehavior
     private void ReleaseItem()
     {
         m_hasReleased = true;
-        
-        if(m_bodyBuffer == null)
+
+        if (m_bodyBuffer == null)
             return;
-        
+
         m_bodyBuffer.transform.parent = m_itemParent;
         m_bodyBuffer.isKinematic = false;
     }

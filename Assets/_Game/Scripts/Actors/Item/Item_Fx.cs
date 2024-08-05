@@ -22,5 +22,6 @@ public class Item_Fx : MonoBehaviour
     {
         ParticleSystem fx = Instantiate(m_deathFxPrefab, transform.position, Quaternion.identity);
         fx.transform.localScale = transform.localScale;
+        Destroy(fx.gameObject, 2f);
     }
 }
